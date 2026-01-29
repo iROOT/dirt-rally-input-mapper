@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+/* Конфигурация темы (аналог tailwind.config.js в v4) */
+@theme {
+  --font-mono: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace';
+
+  --animate-slide-down: slide-down 0.3s ease-out;
+  --animate-bounce-in: bounce-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  --animate-fade-in: fade-in 0.5s ease-out;
+
+  @keyframes slide-down {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes bounce-in {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}
+
+/* Перенос стилей из блока <style> в index.html */
+
+/* Tech Background Grid */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+:root.dark .bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1; 
+  border-radius: 3px;
+}
+:root.dark ::-webkit-scrollbar-thumb {
+  background: #374151; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; 
+}
+:root.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4b5563; 
+}

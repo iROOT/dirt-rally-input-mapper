@@ -1,0 +1,5 @@
+{
+  "name": "DiRT Rally Input Mapper",
+  "description": "A web-based tool to detect gamepads, wheels, and pedals, map them to game actions, and generate compatible ActionMap XML files for DiRT Rally.",
+  "requestFramePermissions": []
+}
